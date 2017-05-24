@@ -1,7 +1,10 @@
 #include "AllController.h"
+#include "../storage/DiseaseDAO.h"
 
-string AllController::doCompleteEvaluation(string req) {
+vector<string> AllController::doCompleteEvaluation(vector<string> req) {
     // TODO Parsing de la requête
     // TODO Check génome format
-    return std::string();
+
+
+    return std::vector<string>();
 }
