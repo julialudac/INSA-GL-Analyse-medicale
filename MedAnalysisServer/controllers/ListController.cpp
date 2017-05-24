@@ -27,3 +27,7 @@ vector<string> ListController::doGetList(const char *req) {
 
 
 }
+
+ListController::ListController(string &filePath) {
+    AnalysisService analysisService = AnalysisService(filePath);
+}
