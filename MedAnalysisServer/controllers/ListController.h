@@ -23,7 +23,7 @@ public:
     ListController(const char *filePath);
 
     //vector<string> doGetList(vector<string> req);
-    vector<string> doGetList(const char *req);
+    vector<string> doGetList(const char *req,string filePath);
 
 };
 
