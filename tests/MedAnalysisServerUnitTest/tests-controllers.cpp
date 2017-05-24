@@ -16,7 +16,7 @@ TEST_CASE("List Controller", "[controller][server]"){
     input.push_back("GET DISEASES");
     input.push_back("");
 
-    str = ListController("E:\\INSA\\3A\\GI UML\\tp_clion\\INSA-GL-Analyse-medicale\\res\\dictionnaire").doGetList(input);
+    str = ListController("../../../res/dictionnaire").doGetList(input);
     REQUIRE(str[0]=="MA v1.0");
     REQUIRE(str[1]=="DISEASES");
     //REQUIRE(str[2]=="");
@@ -33,7 +33,7 @@ TEST_CASE("One Controller","[controller][server]"){
     input.push_back("Cancer");
     input.push_back("CCCC;TATA");
     input.push_back("");
-    str=OneController().doOneEvaluation(input,"E:\\INSA\\3A\\GI UML\\tp_clion\\INSA-GL-Analyse-medicale\\res\\dictionnaire");
+    str=OneController().doOneEvaluation(input,"../../../res/dictionnaire");
     REQUIRE(str[0]=="MA v1.0");
     REQUIRE(str[1]=="DISEASE Cancer");
     //REQUIRE(str[2]=="");
@@ -48,7 +48,7 @@ TEST_CASE("All Controller","[controller][server]"){
     input.push_back("CCCC;TATA;TTAA");
     //input.push_back("TATA");
     //input.push_back("");
-    str=AllController("E:\\INSA\\3A\\GI UML\\tp_clion\\INSA-GL-Analyse-medicale\\res\\dictionnaire").doCompleteEvaluation(input);
+    str=AllController("../../../res/dictionnaire").doCompleteEvaluation(input);
     REQUIRE(str[0]=="MA v1.0");
     REQUIRE(str[1]=="DISEASE Cancer");
 

@@ -9,7 +9,7 @@ vector<string> ListController::doGetList(vector<string>req) {
     res.push_back("DISEASES");
 
     //AnalysisService services = AnalysisService();
-    auto diseases = service.getDisease();
+    auto diseases = service.getDiseases();
 
     /*unordered_multimap<string,Disease> diseases;
     diseases.emplace("Cancer",Disease("Cancer",vector<string>()));
