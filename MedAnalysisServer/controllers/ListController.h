@@ -20,7 +20,7 @@ using std::unordered_multimap;
 class ListController {
 public:
 
-    vector<string> doGetList(vector<string> req);
+    vector<string> doGetList(const char *req);
 
 };
 
