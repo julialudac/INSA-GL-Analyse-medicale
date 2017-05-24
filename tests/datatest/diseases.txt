@@ -1,2 +1,0 @@
-MA v1.0
-Maladie;AGGT;CGT
