@@ -2,6 +2,5 @@
 
 vector<string> OneController::doOneEvaluation(vector<string> req) {
     // TODO Parsing pour evaluation d'une maladie (récupérer la maladie, etc...)
-
-    return std::vector<string>();
+    return vector<string>();
 }
