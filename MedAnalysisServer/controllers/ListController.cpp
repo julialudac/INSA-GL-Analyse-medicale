@@ -18,9 +18,14 @@ vector<string> ListController::doGetList(const char *req) {
     diseases.emplace("Cancer",Disease("Cancer",vector<string>()));
     diseases.emplace("Yinjingduanxiao",Disease("Yinjingduanxiao",vector<string>()));
     diseases.emplace("Meipiyan",Disease("Meipiyan",vector<string>()));*/
+    string k;
+    for(auto it = diseases.begin();it!=diseases.end();){
+        k=it->first;
+        res.push_back(k);
+        do{
+            it++;
 
-    for(auto it = diseases.begin();it!=diseases.end();++it){
-        res.push_back(it->second.name());
+        }while(it!=diseases.end()&&it->first==k);
     }
     res.push_back("");
     return res;
@@ -28,6 +33,6 @@ vector<string> ListController::doGetList(const char *req) {
 
 }
 
-ListController::ListController(string &filePath) {
+ListController::ListController(const char *filePath) {
     AnalysisService analysisService = AnalysisService(filePath);
 }
