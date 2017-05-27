@@ -25,6 +25,7 @@ TEST_CASE("List Controller", "[controller][server]"){
     REQUIRE(str[4]=="Petitbite");
     REQUIRE(str[5]=="");
 }
+
 TEST_CASE("One Controller","[controller][server]"){
     vector<string> str;
     vector<string>input;
@@ -40,6 +41,7 @@ TEST_CASE("One Controller","[controller][server]"){
     REQUIRE(str[2]=="1");
     REQUIRE(str[3]=="");
 }
+
 TEST_CASE("All Controller","[controller][server]"){
     vector<string> str;
     vector<string>input;
