@@ -3,14 +3,17 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+#include "../utils/utils.h"
 
 using std::istream;
 using std::string;
+using std::vector;
 
 class OneController {
 public:
 
-    string doOneEvaluation(string req);
+    vector<string> doOneEvaluation(vector<string> req,const string filePath);
 
 };
 

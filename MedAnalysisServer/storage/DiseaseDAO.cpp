@@ -28,25 +28,23 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
     string diseaseName;
 
     //check if first line is like MA v1.0
-    getline(fin, line);
+    safeGetline(fin, line);
 
-    if (line.compare("MA v1.0")) {
+    if (line.compare("MA v1.0") == 0) {
 
-        while (!fin.eof()) {
-            getline(fin, line);
+        safeGetline(fin, line);
+        while (!line.empty() && !fin.eof()) {
+
             linePart = split(line, DELIM, false);
 
             diseaseName = linePart.at(0);
             linePart.erase(linePart.begin());
-
-            for (auto it = linePart.begin(); it != linePart.end(); it++) {
-                if (it->find_first_not_of(ALLOWED_CHAR) != string::npos) {
-                    throw ReadException();
-                    // TODO Exit Program
-                }
+            if (!check_char_presence(linePart, ALLOWED_CHAR)) {
+                throw ReadException();
             }
 
             diseases.emplace(diseaseName, Disease(diseaseName, linePart));
+            safeGetline(fin, line);
         }
 
     } else {

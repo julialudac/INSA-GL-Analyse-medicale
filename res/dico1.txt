@@ -1,0 +1,3 @@
+Cancer;ACCA;CACACA;CC
+Disease117;TATA
+Disease007;GAG;TT

@@ -21,9 +21,12 @@ public:
 
     AnalysisService();
 
-    vector<Disease> evaluateAll(Genome g);
+    AnalysisService(const string filePath);
 
-    unordered_multimap<string, Disease> getDisease();
+    vector<Disease> evaluateAll(Genome &g);
+
+    unordered_multimap<string, Disease> getDiseases();
+
     const pair<
             unordered_multimap<string, Disease>::iterator,
             unordered_multimap<string, Disease>::iterator
