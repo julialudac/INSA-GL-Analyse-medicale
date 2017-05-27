@@ -28,10 +28,11 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
     string diseaseName;
 
     //check if first line is like MA v1.0
-    getline(fin, line);
+    safeGetline(fin, line);
 
-    if (line.compare("MA v1.0")==0) {
-        getline(fin, line);
+    if (line.compare("MA v1.0") == 0) {
+
+        safeGetline(fin, line);
         while (!line.empty() && !fin.eof()) {
 
             linePart = split(line, DELIM, false);
@@ -43,7 +44,7 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
             }
 
             diseases.emplace(diseaseName, Disease(diseaseName, linePart));
-            getline(fin, line);
+            safeGetline(fin, line);
         }
 
     } else {

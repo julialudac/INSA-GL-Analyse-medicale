@@ -3,7 +3,7 @@
 #include <services/AnalysisService.h>
 
 TEST_CASE("Evaluating All Diseases", "[server][service]") {
-    AnalysisService service = AnalysisService("../../../res/disease");
+    AnalysisService service = AnalysisService("./res/disease");
     vector<string> genes;
     genes.push_back("GTAC");
     genes.push_back("GGCC");
@@ -13,7 +13,7 @@ TEST_CASE("Evaluating All Diseases", "[server][service]") {
 }
 
 TEST_CASE("Evaluating One Disease", "[server][service]") {
-    AnalysisService service = AnalysisService("../../../res/disease");
+    AnalysisService service = AnalysisService("./res/disease");
     vector<string> genes;
     genes.push_back("GTAC");
     genes.push_back("GGCC");
@@ -23,7 +23,7 @@ TEST_CASE("Evaluating One Disease", "[server][service]") {
 }
 
 TEST_CASE("Getting disease by name", "[server][service]") {
-    AnalysisService service = AnalysisService("../../../res/disease");
+    AnalysisService service = AnalysisService("./res/disease");
     pair<unordered_multimap<string, Disease>::iterator,
             unordered_multimap<string, Disease>::iterator
     > disease = service.getDiseaseByName("Cancer");
@@ -34,7 +34,7 @@ TEST_CASE("Getting disease by name", "[server][service]") {
 }
 
 TEST_CASE("Getting diseases", "[server][service]") {
-    AnalysisService service = AnalysisService("../../../res/disease");
+    AnalysisService service = AnalysisService("./res/disease");
     auto diseasesMap = service.getDiseases();
     unordered_multimap<std::string, Disease>::iterator iter;
     vector<string> diseases;
