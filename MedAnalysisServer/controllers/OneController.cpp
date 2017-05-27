@@ -1,8 +1,8 @@
 #include "OneController.h"
 #include "../services/AnalysisService.h"
 
-
 vector<string> OneController::doOneEvaluation(vector<string> req,const string filePath) {
+  
     // TODO Parsing pour evaluation d'une maladie (récupérer la maladie, etc...)
     string diseaseName = req[2];
     vector<string> genes = split(req[3], ';', false);

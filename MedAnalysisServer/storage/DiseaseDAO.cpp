@@ -32,7 +32,7 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
 
     if (line.compare("MA v1.0")==0) {
         getline(fin, line);
-        while (!line.empty()) {
+        while (!line.empty() && !fin.eof()) {
 
             linePart = split(line, DELIM, false);
 
