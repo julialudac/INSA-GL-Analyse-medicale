@@ -36,5 +36,5 @@ add_subdirectory(tests/MedAnalysisClientUnitTest)
 add_subdirectory(tests/MedAnalysisServerUnitTest)
 
 enable_testing()
-add_test(NAME MedAnalysisClientUnitTest COMMAND MedAnalysisClientUnitTest)
-add_test(NAME MedAnalysisServerUnitTest COMMAND MedAnalysisServerUnitTest)
+add_test(NAME MedAnalysisClientUnitTest COMMAND MedAnalysisClientUnitTest WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+add_test(NAME MedAnalysisServerUnitTest COMMAND MedAnalysisServerUnitTest WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
