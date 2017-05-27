@@ -51,6 +51,5 @@ TEST_CASE("All Controller", "[controller][server]") {
     str = AllController("./res/dico1.txt").doCompleteEvaluation(input);
     REQUIRE(str[0] == "MA v1.0");
     REQUIRE(str[1] == "DISEASE Disease117");
-
     REQUIRE(str[2] == "");
 }

@@ -20,10 +20,12 @@ using std::unordered_multimap;
 class ListController {
 public:
 
-    ListController(const char *filePath);
+    ListController(string filePath);
 
     //vector<string> doGetList(vector<string> req);
-    vector<string> doGetList(const char *req,string filePath);
+    vector<string> doGetList(vector<string>req);
+private:
+    AnalysisService service;
 
 };
 

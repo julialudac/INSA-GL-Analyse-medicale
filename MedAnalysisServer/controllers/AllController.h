@@ -15,7 +15,7 @@ using std::vector;
 class AllController {
 public:
 
-    AllController(string &filePath);
+    AllController(string filePath);
 
     vector<string> doCompleteEvaluation(vector<string> req);
 

@@ -13,7 +13,7 @@ vector<Disease> AnalysisService::evaluateAll(Genome &g) {
     return checkDiseases;
 }
 
-unordered_multimap<string, Disease> AnalysisService::getDisease() {
+unordered_multimap<string, Disease> AnalysisService::getDiseases() {
     try {
         return diseaseDAO.findAll();
     } catch (std::exception exception) {
@@ -53,7 +53,7 @@ AnalysisService::AnalysisService() {
     diseaseDAO = DiseaseDAO(/* TODO Get path argument */);
 }
 
-AnalysisService::AnalysisService(string filePath) {
+AnalysisService::AnalysisService(const string filePath) {
     diseaseDAO = DiseaseDAO(filePath);
 }
 
