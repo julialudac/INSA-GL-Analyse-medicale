@@ -1,6 +1,7 @@
 #include "DiseaseDAO.h"
 
 const static char DELIM = ';';
+const static char *ALLOWED_CHAR = "ATCG";
 
 DiseaseDAO::DiseaseDAO(string fileName) {
     name = fileName;
@@ -18,7 +19,8 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
     ifstream fin;
     fin.open(name);
     if (!fin.good() || fin.eof()) {
-        // TODO Throw File Not Good exception
+        throw ReadException();
+        // TODO Exit Program
     }
 
     vector<string> linePart;
@@ -28,20 +30,25 @@ const unordered_multimap<string, Disease> DiseaseDAO::findAll() {
     //check if first line is like MA v1.0
     getline(fin, line);
 
-    if (line.compare("MA v1.0")) {
+    if (line.compare("MA v1.0")==0) {
+        getline(fin, line);
+        while (!line.empty() && !fin.eof()) {
 
-        while (!fin.eof()) {
-            getline(fin, line);
             linePart = split(line, DELIM, false);
 
             diseaseName = linePart.at(0);
             linePart.erase(linePart.begin());
+            if (!check_char_presence(linePart, ALLOWED_CHAR)) {
+                throw ReadException();
+            }
 
             diseases.emplace(diseaseName, Disease(diseaseName, linePart));
+            getline(fin, line);
         }
 
     } else {
-        // TODO Throw File Not Good exception
+        // TODO Exit Program
+        throw ReadException();
     }
 
     return diseases;
@@ -52,11 +59,15 @@ const pair<
         unordered_multimap<string, Disease>::iterator
 > DiseaseDAO::findByName(const string basic_string) {
 
-    findAll();
+    try {
+        findAll();
+    } catch (ReadException &exception) {
+        throw exception; // For upper levels
+    }
 
     auto range = diseases.equal_range(basic_string);
     if (range.first == range.second) {
-        // TODO Throw Disease Not Found excpetion
+        throw DiseaseNotFoundException();
     }
     return range;
 }

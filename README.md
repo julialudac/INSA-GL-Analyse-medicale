@@ -15,12 +15,14 @@
 ## Utiliser l'application
 
 ### Serveur
+
 L'application serveur permet d'évaluer les maladies possibles qui peuvent être incluses dans un génome. 
 
 ##### Fichiers utilisés
 Il s'appuie sur un fichier contenant un dictionnaire des maladies qu'il est capable d'évaluer. 
 
 ##### Démarrage du serveur
+
 Lorsque l'interface est lancée, un numéro de port sur lequel doit démarrer le serveur est demandé, ainsi que le nom du fichier contenant le dictionnaire de maladies. C'est le port sur lequel sera lancée l'application serveur. Ces paramètres choisis, il suffit de cliquer sur le bouton "Start Server", qui démarrera le serveur si tout fonctionne.
 Un serveur en exécution est capable de répondre à des requêtes de client arrivant sur son adresse IP et son numéro de port. Ces requêtes doivent concerner l'une des trois fonctions : 
 * Fournir la liste des maladies du dictionnaire
@@ -39,6 +41,7 @@ Lorsque le fichier du dictionnaire des maladies ou que le port sur lequel vous v
 
 
 ### Client
+
 L'application cliente permet d'obtenir des évaluations des maladies à risque sur des génomes de patient. Pour cela, elle envoie des requêtes à des serveurs qui lui envoient la réponse.
 
 ##### Fichiers utilisés
@@ -56,11 +59,12 @@ Une fenêtre s'ouvre.
 * Add Server : permet d'ajouter manuellement un serveur dans la base de données. Son adresse IP et son nom sont demandés. 
 * Remove Server : permet d'enlever manuellement un serveur répertorié de la base de données. Son adresse IP est demandée. 
 
+
 ##### Quitter
 Un bouton permet de fermer l'application à tout moment.
 
 ##### Erreurs possibles 
-* Impossible de lire le fichier contenant le genôme
+* Impossible de lire le fichier contenant le génome
 * Impossible de manipuler la base de données des serveurs répertoriés
 * Erreur de réseau 
 

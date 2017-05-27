@@ -7,6 +7,7 @@
 #include "../models/Disease.h"
 #include "../models/Genome.h"
 #include "../storage/DiseaseDAO.h"
+#include "../exceptions/AnalysisException.h"
 
 using std::vector;
 using std::string;
@@ -20,9 +21,12 @@ public:
 
     AnalysisService();
 
-    vector<Disease> evaluateAll(Genome g);
+    AnalysisService(string filePath);
+
+    vector<Disease> evaluateAll(Genome &g);
 
     unordered_multimap<string, Disease> getDisease();
+
     const pair<
             unordered_multimap<string, Disease>::iterator,
             unordered_multimap<string, Disease>::iterator

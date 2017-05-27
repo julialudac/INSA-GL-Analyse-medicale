@@ -1,6 +1,6 @@
 #include "AnalysisService.h"
 
-vector<Disease> AnalysisService::evaluateAll(Genome g) {
+vector<Disease> AnalysisService::evaluateAll(Genome &g) {
     auto diseases = diseaseDAO.findAll();
     vector<Disease> checkDiseases;
 
@@ -17,8 +17,7 @@ unordered_multimap<string, Disease> AnalysisService::getDisease() {
     try {
         return diseaseDAO.findAll();
     } catch (std::exception exception) {
-        // TODO Throw ServiceExcpetion
-        throw "Nop";
+        throw AnalysisException();
     }
 }
 
@@ -29,8 +28,7 @@ const pair<
     try {
         return diseaseDAO.findByName(name);
     } catch (std::exception exception) {
-        // TODO Throw ServiceExcpetion
-        throw "Nop";
+        throw AnalysisException();
     }
 }
 
@@ -53,6 +51,10 @@ bool AnalysisService::evaluateOne(Genome &g, Disease &d) const {
 
 AnalysisService::AnalysisService() {
     diseaseDAO = DiseaseDAO(/* TODO Get path argument */);
+}
+
+AnalysisService::AnalysisService(string filePath) {
+    diseaseDAO = DiseaseDAO(filePath);
 }
 
 
