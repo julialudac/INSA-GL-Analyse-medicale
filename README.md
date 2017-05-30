@@ -1,10 +1,6 @@
 # Projet Génie Logiciel - Analyse médicale
 
-[![license](https://img.shields.io/github/license/Embraser01/INSA-GL-Analyse-medicale.svg)](./LICENSE.md)
-[![build](https://api.travis-ci.org/Embraser01/INSA-GL-Analyse-medicale.svg?branch=prod)](https://travis-ci.org/Embraser01/INSA-GL-Analyse-medicale)
-
 ## Presentation
-  Ceci est un projet fait en Génie Logiciel 3IF à l'INSA de Lyon. Le sujet est disponible [ici](./doc/sujet.pdf)
   Auteurs :
 *    Marc-Antoine FERNANDES
 *    Julia LU DAC
@@ -29,10 +25,6 @@ Un serveur en exécution est capable de répondre à des requêtes de client arr
 * Indiquer si un risque de maladie est présente dans un génome
 * Fournir la liste des risques de maladie dans un génome
 
-##### Diffusion de l'adresse IP et du port via multicast
-Un bouton "Start Multicast" permet au serveur d'envoyer à intervalles réguliers (2.5 s) son adresse IP et le port de connexion sur une adresse multicast, pour en informer les clients. L'adresse IP est 225.6.7.8 et le port est 5678.
-Le bouton "Stop Multicast" permet d'arrêter ces envois.
-
 ##### Quitter
 Un bouton permet de quitter l'application à tout moment.
 
@@ -51,7 +43,7 @@ Le génome à analyser se situe dans un fichier ordinaire, et la liste des serve
 C'est la fonction primaire de l'application. Lorsque l'on clique sur ce bouton, une fenêtre s'ouvre avec 3 boutons. Chaque bouton permet d'envoyer une requête à un ou plusieurs serveurs :
 * Get diseases : Vous recevrez la liste des maladies à risque que le serveur cible est capable d'évaluer.
 * Evaluate All Disease : Le génome à évaluer est demandé. Vous recevrez la liste de l'ensemble des maladies à risque que les serveurs répertoriés ont trouvé sur ce génome.
-* Evaluate One Disease : Le génome à évaluer et la maladie à chercher sur ce génome sont demandés. Vous recevrez une réponse "Yes" ou "No" lors de la présence ou non de la maladie sur le génome.
+* Evaluate One Disease : Le génome à évaluer et la maladie à chercher sur ce génome sont demandés. Vous recevrez une réponse "<nomMaladie> : Yes" ou "<nomMaladie> : No" lors de la présence ou non de la maladie sur le génome.
 
 ##### Gestion des serveurs enregistrés
 Une fenêtre s'ouvre. 
